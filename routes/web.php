@@ -16,3 +16,7 @@ Route::get('/post/{id}', 'PublicController@singlePost')->name('post');
 Route::get('/about', 'PublicController@about')->name('about');
 Route::get('/contact', 'PublicController@contact')->name('contact');
 Route::post('/contact', 'PublicController@contactPost')->name('contactPost');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
