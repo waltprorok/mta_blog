@@ -11,10 +11,10 @@
     <title>Clean Blog - Start Bootstrap Theme</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="{{ asset('assets/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
           type='text/css'>
     <link
@@ -22,7 +22,7 @@
         rel='stylesheet' type='text/css'>
 
     <!-- Custom styles for this template -->
-    <link href="/assets/css/clean-blog.min.css" rel="stylesheet">
+    <link href="{{ asset('assets/css/clean-blog.min.css') }}" rel="stylesheet">
 
 </head>
 
@@ -56,21 +56,6 @@
         </div>
     </div>
 </nav>
-
-<!-- Page Header -->
-<header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto">
-                <div class="site-heading">
-                    <h1>Clean Blog</h1>
-                    <span class="subheading">A Blog Theme by Start Bootstrap</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
 
 
 @yield('content')
@@ -115,11 +100,11 @@
 </footer>
 
 <!-- Bootstrap core JavaScript -->
-<script src="/assets/vendor/jquery/jquery.min.js"></script>
-<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{ asset('assets/vendor/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
 <!-- Custom scripts for this template -->
-<script src="/assets/js/clean-blog.min.js"></script>
+<script src="{{asset('assets/js/clean-blog.min.js')}}"></script>
 
 </body>
 
