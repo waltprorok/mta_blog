@@ -11,10 +11,10 @@
     <title>Clean Blog - Start Bootstrap Theme</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
           type='text/css'>
     <link
@@ -22,7 +22,7 @@
         rel='stylesheet' type='text/css'>
 
     <!-- Custom styles for this template -->
-    <link href="assets/css/clean-blog.min.css" rel="stylesheet">
+    <link href="/assets/css/clean-blog.min.css" rel="stylesheet">
 
 </head>
 
@@ -115,11 +115,11 @@
 </footer>
 
 <!-- Bootstrap core JavaScript -->
-<script src="assets/vendor/jquery/jquery.min.js"></script>
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Custom scripts for this template -->
-<script src="assets/js/clean-blog.min.js"></script>
+<script src="/assets/js/clean-blog.min.js"></script>
 
 </body>
 
