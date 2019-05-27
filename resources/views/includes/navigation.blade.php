@@ -27,9 +27,9 @@
 
                     <li class="nav-item">
                         <form method="POST" id="logout-form" action="{{ route('logout') }}">@csrf</form>
-                        <a class="nav-link" href="#" onclick="document.getElementById('logout-form').submit();">Logout</a>
+                        <a class="nav-link" href="#"
+                           onclick="document.getElementById('logout-form').submit();">Logout</a>
                     </li>
-
 
                 @else
 
