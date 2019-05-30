@@ -26,7 +26,24 @@
                     {!! nl2br($post->content) !!}
                 </div>
             </div>
+
+            <div class="comments">
+                <hr/>
+                <h2>Comments</h2>
+                <hr/>
+                @foreach($post->comments as $comment)
+
+                    <p>{{ $comment->content }}</p>
+                    <p>
+                        <small>by {{ $comment->user->name }},
+                            on {{ date_format($comment->created_at, 'F d, Y') }}</small>
+                    </p>
+                    <hr/>
+                @endforeach
+            </div>
         </div>
     </article>
+
+
 
 @endsection
