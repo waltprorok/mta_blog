@@ -25,12 +25,17 @@
                         @foreach(Auth::user()->comments as $comment)
                             <tr>
                                 <td>{{ $comment->id }}</td>
-                                <td class="text-nowrap"><a href="{{ route('singlePost', $comment->id) }}" target="_blank">{{ $comment->post->title }}</a></td>
+                                <td class="text-nowrap"><a href="{{ route('singlePost', $comment->id) }}"
+                                                           target="_blank">{{ $comment->post->title }}</a></td>
                                 <td>{{ $comment->content }}</td>
                                 <td>{{ \Carbon\Carbon::parse($comment->created_at)->diffForHumans() }}</td>
                                 <td>
                                     <form id="deleteComment-{{ $comment->id }}" action="{{ route('deleteComment', $comment->id) }}" method="post">@csrf</form>
-                                    <button type="button" class="btn btn-danger" onclick="document.getElementById('deleteComment-{{ $comment->id }}').submit()">X</button></td>
+                                    <button type="button" class="btn btn-sm btn-danger"
+                                            onclick="document.getElementById('deleteComment-{{ $comment->id }}').submit()">
+                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                    </button>
+                                </td>
                             </tr>
                         @endforeach
 
