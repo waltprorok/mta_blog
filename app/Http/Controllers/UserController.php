@@ -43,7 +43,7 @@ class UserController extends Controller
                 return redirect()->back()->with('error', 'Your current password does not match with the password you provided');
             }
             if (strcmp($request['password'], $request['new_password']) == 0) {
-                return redirect()->back()->with('error', 'New password cannot e the same as your current password.');
+                return redirect()->back()->with('error', 'New password cannot be the same as your current password.');
             }
 
             $validation = $request->validate([

@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title', 'New Post')
+@section('title') Editing {{ $post->title }} @endsection
 
 @section('content')
 
@@ -26,9 +26,9 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header bg-light">
-                            New Post
+                            Editing {{ $post->title }}
                         </div>
-                        <form action="{{ route('createPost') }}" method="POST">
+                        <form action="{{ route('postEditPost', $post->id) }}" method="POST">
                             @csrf
                             <div class="card-body">
                                 <div class="row">
@@ -36,7 +36,7 @@
                                         <div class="form-group">
                                             <label for="normal-input" class="form-control-label">Title</label>
                                             <input name="title" id="normal-input" class="form-control"
-                                                   placeholder="Post title" value="{{ old('title') }}">
+                                                   placeholder="Post title" value="{{ $post->title }}">
                                         </div>
                                     </div>
                                 </div>
@@ -46,11 +46,11 @@
                                         <div class="form-group">
                                             <label for="normal-input" class="form-control-label">Content</label>
                                             <textarea name="content" id="normal-input" rows="8" class="form-control"
-                                                      placeholder="Post content">{{ old('content') }}</textarea>
+                                                      placeholder="Post content">{{ $post->content }}</textarea>
                                         </div>
                                     </div>
                                 </div>
-                                <button class="btn btn-primary" type="submit">Create post</button>
+                                <button class="btn btn-primary" type="submit">Update</button>
                             </div>
                         </form>
                     </div>
