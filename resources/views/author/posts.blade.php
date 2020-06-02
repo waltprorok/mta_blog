@@ -33,9 +33,9 @@
                                 <td>{{ $post->comments->count() }}</td>
                                 <td class="text-nowrap">
                                     <span class="align-baseline">
-                                    <a href="{{ route('postEdit', $post->id) }}" class="btn btn-sm btn-warning">Edit</a>
-                                    <form method="POST" id="deletePost-{{ $post->id }}" action="{{ route('deletePost', $post->id) }}">@csrf</form>
-                                    <a href="#" onclick="document.getElementById('deletePost-{{ $post->id }}').submit()" class="btn btn-sm btn-danger">Remove</a>
+                                        <form method="POST" id="deletePost-{{ $post->id }}" action="{{ route('deletePost', $post->id) }}">@csrf</form>
+                                    <a href="{{ route('postEdit', $post->id) }}" class="btn btn-outline-primary"><i class="fa fa-edit" aria-hidden="true"></i></a>
+                                    <a href="#" onclick="document.getElementById('deletePost-{{ $post->id }}').submit()" class="btn btn-outline-danger"><i class="fa fa-trash" aria-hidden="true"></i></a>
                                     </span>
                                 </td>
                             </tr>
