@@ -32,19 +32,43 @@
                                 <td>{{ $post->comments->count() }}</td>
                                 <td class="text-nowrap">
                                     <span class="align-baseline">
-                                        <form method="POST" id="deletePost-{{ $post->id }}" action="{{ route('adminDeletePost', $post->id) }}">@csrf</form>
                                     <a href="{{ route('adminPostEdit', $post->id) }}" class="btn btn-outline-primary"><i class="fa fa-edit" aria-hidden="true"></i></a>
-                                    <a href="#" onclick="document.getElementById('deletePost-{{ $post->id }}').submit()" class="btn btn-outline-danger"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                    <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deletePostModal-{{ $post->id }}"><i class="fa fa-trash" aria-hidden="true"></i></button>
                                     </span>
                                 </td>
                             </tr>
                         @endforeach
-
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
     </div>
+
+    @foreach($posts as $post)
+    <div class="modal fade" id="deletePostModal-{{ $post->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Delete Post?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    You are about to delete {{ $post->title }}
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                    <form method="POST" id="deletePost-{{ $post->id }}" action="{{ route('adminDeletePost', $post->id) }}">@csrf
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endforeach
 
 @endsection
