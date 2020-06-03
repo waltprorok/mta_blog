@@ -9,7 +9,7 @@
                 <div class="col-lg-8 col-md-10 mx-auto">
                     <div class="site-heading">
                         <h1>Music Teachers Aid Blog</h1>
-                        <span class="subheading">MTA Blog Powered by Laravel</span>
+                        <span class="subheading">'MTA Blog Powered by Laravel</span>
                     </div>
                 </div>
             </div>
