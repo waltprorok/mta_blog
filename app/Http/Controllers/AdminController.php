@@ -7,6 +7,7 @@ use App\Comment;
 use App\Http\Requests\CreatePost;
 use App\Http\Requests\UserUpdate;
 use App\Post;
+use App\Product;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -133,7 +134,8 @@ class AdminController extends Controller
 
     public function products()
     {
-        return view('admin.products');
+        $products = Product::all();
+        return view('admin.products', compact('products'));
     }
 
     public function newProduct()
