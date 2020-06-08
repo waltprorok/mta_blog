@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Facade\PayPal;
+use App\Mail\SendMailPurchase;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use PayPal\Api\Amount;
 use PayPal\Api\Details;
 use PayPal\Api\Item;
@@ -135,20 +137,18 @@ class ShopController extends Controller
 
             try {
                 $payment = Payment::get($paymentId, $apiContext);
+                $paymentInfo = json_decode($payment);
+                Mail::to($paymentInfo->payer->payer_info->email)
+                    ->bcc('webshop-admin@person-blog.test')
+                    ->send(new SendMailPurchase($paymentInfo));
+
             } catch (\Exception $ex) {
                 // NOTE: PLEASE DO NOT USE RESULTPRINTER CLASS IN YOUR ORIGINAL CODE. FOR SAMPLE ONLY
-                print("Get Payment 1");
-                exit(1);
+                return redirect(route('shop.index'));
             }
         } catch (\Exception $ex) {
-            // NOTE: PLEASE DO NOT USE RESULTPRINTER CLASS IN YOUR ORIGINAL CODE. FOR SAMPLE ONLY
-            print("Executed Payment 2");
-            exit(1);
+            return redirect(route('shop.index'));
         }
-
-        // NOTE: PLEASE DO NOT USE RESULTPRINTER CLASS IN YOUR ORIGINAL CODE. FOR SAMPLE ONLY
-        print("Get Payment 2" . $payment->getId());
-
-        return $payment;
+        return redirect(route('shop.index'));
     }
 }
