@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Charts\DashboardChart;
 use App\Comment;
 use App\Http\Requests\CreatePost;
+use App\Http\Requests\NewProductPost;
 use App\Http\Requests\UserUpdate;
 use App\Post;
 use App\Product;
@@ -140,12 +141,26 @@ class AdminController extends Controller
 
     public function newProduct()
     {
-
+        return view('admin.newProduct');
     }
 
-    public function newProductPost(Request $request)
+    public function newProductPost(NewProductPost $request)
     {
+        $product = new Product;
+        $product->title = $request->get('title');
+        $product->description = $request->get('description');
+        $product->price = $request->get('price');
 
+        $thumbnail = $request->file('thumbnail');
+        $fileName = $thumbnail->getClientOriginalName();
+        $fileExtension = $thumbnail->getClientOriginalExtension();
+        $thumbnail->move('product-images', $fileName);
+
+        $product->thumbnail = 'product-images/' . $fileName;
+
+        $product->save();
+
+        return back();
     }
 
     public function editProduct()
