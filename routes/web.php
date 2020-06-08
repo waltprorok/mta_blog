@@ -59,6 +59,7 @@ Route::prefix('admin')->group(function () {
     Route::post('products/new', 'AdminController@newProductPost')->name('adminNewProduct');
     Route::get('product/{id}', 'AdminController@editProduct')->name('adminEditProduct');
     Route::post('product/{id}', 'AdminController@editProductPost')->name('adminEditProduct');
+    Route::post('product/{id}/delete', 'AdminController@deleteProduct')->name('deleteProduct');
 
 });
 

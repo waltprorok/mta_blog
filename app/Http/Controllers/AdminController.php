@@ -192,8 +192,12 @@ class AdminController extends Controller
         $product->save();
 
         return back();
-
     }
 
+    public function deleteProduct($id)
+    {
+        $product = Product::findOrFail($id)->delete();
+        return back();
+    }
 }
 

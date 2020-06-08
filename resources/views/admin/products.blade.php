@@ -52,7 +52,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Delete Post?</h5>
+                        <h5 class="modal-title">Delete Product?</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -64,7 +64,7 @@
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
-                        <form method="POST" id="deleteProduct-{{ $product->id }}" action="#">@csrf
+                        <form method="POST" id="deleteProduct-{{ $product->id }}" action="{{ route('deleteProduct', $product->id) }}">@csrf
                             <button type="submit" class="btn btn-danger">Delete</button>
                         </form>
                     </div>
