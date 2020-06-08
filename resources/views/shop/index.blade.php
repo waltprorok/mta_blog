@@ -1,4 +1,5 @@
 @extends('layouts.master')
+@section('title', 'Online Shop')
 @section('content')
 
     <!-- Page Header -->
@@ -15,4 +16,25 @@
             </div>
         </div>
     </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                @foreach($products as $product)
+                    <div class="post-preview">
+                        <a href="{{ route('shop.singleProduct', $product->id) }}">
+                            <h2 class="post-title">
+                                {{ $product->title }}
+                            </h2>
+                        </a>
+                        <p class="post-meta">Posted
+                            on {{ date_format($product->created_at, 'F d, Y') }}
+                        </p>
+                    </div>
+                    <hr>
+                @endforeach
+            </div>
+        </div>
+    </div>
 @endsection
