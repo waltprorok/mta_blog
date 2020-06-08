@@ -17,5 +17,21 @@
         </div>
     </header>
 
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="{{ asset($product->thumbnail) }}" alt="">
+            </div>
+            <div class="col-md-8">
+                <h3>{{ $product->title }}</h3>
+                <hr />
+                {{ $product->description }}
+                <hr />
+                <p><b>${{ $product->price }} USD</b></p>
+                <a href="" class="btn btn-primary">Checkout with PayPal</a>
+            </div>
+        </div>
+    </div>
 
 @endsection

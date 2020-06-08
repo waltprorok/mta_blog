@@ -23,14 +23,19 @@
             <div class="col-lg-8 col-md-10 mx-auto">
                 @foreach($products as $product)
                     <div class="post-preview">
-                        <a href="{{ route('shop.singleProduct', $product->id) }}">
-                            <h2 class="post-title">
-                                {{ $product->title }}
-                            </h2>
-                        </a>
-                        <p class="post-meta">Posted
-                            on {{ date_format($product->created_at, 'F d, Y') }}
-                        </p>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img src="{{ asset($product->thumbnail) }}" width="100" alt="">
+                            </div>
+                            <div class="col-md-9">
+                                <a href="{{ route('shop.singleProduct', $product->id) }}">
+                                    <h2 class="post-title"> {{ $product->title }} </h2>
+                                </a>
+                                <p class="post-meta">${{ $product->price }} USD
+                                </p>
+                            </div>
+                        </div>
+
                     </div>
                     <hr>
                 @endforeach
