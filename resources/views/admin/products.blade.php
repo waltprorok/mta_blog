@@ -65,7 +65,7 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
                         <form method="POST" id="deleteProduct-{{ $product->id }}" action="{{ route('deleteProduct', $product->id) }}">@csrf
-                            <button type="submit" class="btn btn-danger">Delete</button>
+                            <button type="submit" class="btn btn-danger">Delete Product</button>
                         </form>
                     </div>
                 </div>
